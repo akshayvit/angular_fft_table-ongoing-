@@ -1,0 +1,49 @@
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Fourier transform on polynomial multiplication</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        jQuery(document).ready(()=>{
+        let count=1;
+        let c=document.getElementById("deg").innerHTML;
+        let val=document.getElementById("val").innerHTML;
+        if(c.length && val.length) { 
+        document.getElementsByClassName("btn").disabled=false;
+        jQuery(".btn").on("click",()=>{
+        var tabl=document.getElementById("tab1");
+        var row=tabl.createRow(0);
+        var c3=row.insertCell(0);
+        c3.innerHTML=++count;
+        var c1=row.insertCell(1);
+        var c2=row.insertCell(2);
+        c1.innerHTML=c;
+        c2.innerHTML=val;
+        });
+        }
+        });
+    </script>  
+</head>
+  <body>
+    <div class="container-fluid">
+      <table class="table table-striped" id="tab1">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Degree Till now</th>
+            <th scope="col">Value of Coefficient</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="col">1</th>
+            <td scope="col"><input class="form-control" type="text" name="lstd" id="deg"/></td>
+            <td scope="col"><input class="form-control" type="text" name="lstv" id="val"/></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <button disabled class="btn btn-success">Add data</button>
+    </div>
+  </body>
